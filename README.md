@@ -1,17 +1,18 @@
 # auto_routing_eg
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 # flutter_auto_route_example
+
+A Simple example of Auto_Route flutter package. The auto_route package I use is version 2.2.0 and use the same for output and I will update latest version when done.  
+
+To build the auto_route_generator file once, run the following command.
+   flutter packages pub run build_runner build
+   
+To build the auto_route_generator file continuously, run the following command.
+   flutter packages pub run build_runner watch
+   
+Note:--  Whenever you make changes in route.dart file, Restart the app (sometimes reload won't have effect).
+
+![](route.gif)
+
+
+Follow the page and keep supporting me and to hire me for Freelancer Projects, use the link https://www.freelancer.com/u/jinoshprabhuraj5
