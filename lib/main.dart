@@ -11,16 +11,18 @@ void main(List<String> args) {
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Main Page"),
+        title: const Text("Main Page"),
       ),
       body: Center(
         child: Column(
@@ -28,15 +30,15 @@ class _MyAppState extends State<MyApp> {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  AutoRouter.of(context).push(ro.SecondPageRoute());
+                  AutoRouter.of(context).push(const ro.SecondPageRoute());
                 },
-                child: Text("Second Page")),
+                child: const Text("Second Page")),
             ElevatedButton(
                 onPressed: () {
                   AutoRouter.of(context)
                       .push(ro.ThirdPageRoute(text: "New Text"));
                 },
-                child: Text("Third Page")),
+                child: const Text("Third Page")),
           ],
         ),
       ),
