@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage(name: "ThirdPage")
 class ThirdPage extends StatefulWidget {
   final String text;
-  const ThirdPage({Key? key, required this.text}) : super(key: key);
+  const ThirdPage({super.key, required this.text});
 
   @override
   ThirdPageState createState() => ThirdPageState();

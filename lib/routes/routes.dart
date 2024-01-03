@@ -1,15 +1,23 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:auto_routing_eg/main.dart';
-import 'package:auto_routing_eg/second_page.dart';
-import 'package:auto_routing_eg/third_page.dart';
 
-@MaterialAutoRouter(routes: [
-  MaterialRoute(page: MyApp, initial: true),
-  MaterialRoute(page: SecondPage, fullscreenDialog: true),
-  CustomRoute(
-      page: ThirdPage,
-      transitionsBuilder: TransitionsBuilders.slideLeftWithFade)
-  // MaterialRoute(page: ThirdPage),
-])
-@AutoRouter()
-class $Router {}
+import 'routes.gr.dart';
+
+@AutoRouterConfig(replaceInRouteName: 'Screen,Route')
+class AppRouter extends $AppRouter {
+  @override
+  RouteType get defaultRouteType => const RouteType.material();
+
+  @override
+  List<AutoRoute> get routes => [
+        MaterialRoute(page: const PageInfo('MyApp'), initial: true),
+        MaterialRoute(
+          page: const PageInfo('SecondPage'),
+          fullscreenDialog: true,
+        ),
+        CustomRoute(
+            page: const PageInfo('ThirdPage'),
+            transitionsBuilder: TransitionsBuilders.slideLeftWithFade),
+
+        /// routes go here
+      ];
+}

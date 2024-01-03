@@ -1,15 +1,19 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:auto_routing_eg/routes/routes.gr.dart' as ro;
+import 'package:auto_routing_eg/routes/routes.dart';
+import 'package:auto_routing_eg/routes/routes.gr.dart';
+// import 'package:auto_routing_eg/routes/routes.gr.dart' as ro;
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  runApp(MaterialApp.router(
-    routeInformationParser: ro.Router().defaultRouteParser(),
-    routerDelegate: ro.Router().delegate(),
-    key: ro.Router().key,
-  ));
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    MaterialApp.router(
+      routerConfig: AppRouter().config(),
+    ),
+  );
 }
 
+@RoutePage(name: "MyApp")
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -30,13 +34,12 @@ class MyAppState extends State<MyApp> {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  AutoRouter.of(context).push(const ro.SecondPageRoute());
+                  AutoRouter.of(context).replace(const SecondPage());
                 },
                 child: const Text("Second Page")),
             ElevatedButton(
                 onPressed: () {
-                  AutoRouter.of(context)
-                      .push(ro.ThirdPageRoute(text: "New Text"));
+                  AutoRouter.of(context).push(ThirdPage(text: "Hello da Raj"));
                 },
                 child: const Text("Third Page")),
           ],
